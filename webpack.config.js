@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.jsx',
+    devtool: "#eval-source-map",
+    entry: [
+	'./src/index.jsx'
+    ],
     output: {
 	filename: 'bundle.js',
 	path: path.resolve(__dirname, 'dist')
@@ -9,7 +12,8 @@ module.exports = {
     module: {
 	rules: [
 	    {
-		test: /\.jsx$/,
+		test: /\.jsx?$/,
+		exclude: /node_modules/,
 		loader: 'babel-loader',
 		query: {
 		    presets: ['es2015', 'react']
@@ -34,6 +38,9 @@ module.exports = {
 		]
 	    }
 	]
+    },
+    resolve: {
+	extensions: ['.js', '.jsx']
     }
 };
 
