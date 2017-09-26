@@ -10,27 +10,24 @@ class MagicComponent extends React.Component {
     }
     
     toggleColor() {
-	this.setState({
-	    componentColor: style.color1
-	})
-	
 	if (this.state.componentColor == style.color1) {
 	    this.setState({
 		componentColor: style.color2
 	    })
 	}
+	else {
+	    this.setState({
+		componentColor: style.color1
+	    })	    
+	}
     }
-
+    
     render() {
 	return (
-	    <div onClick={() => this.toggleColor()}>
-	      <p className={this.state.componentColor}>Click Me!</p>
+	    <div className={this.state.componentColor} onClick={() => this.toggleColor()}>
+	      <p>Click Me!</p>
 	    </div>
 	);
-    }
-
-    sum(a, b) {
-	return a + b;
     }
 };
  
