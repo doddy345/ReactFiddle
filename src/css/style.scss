@@ -1,0 +1,13 @@
+$theme_colour: blue;
+
+body {
+    color: $theme_colour;
+    background: green;
+    .color1 {
+	color: red;
+    }
+    .color2 {
+	color: blue;
+    }
+}
+
