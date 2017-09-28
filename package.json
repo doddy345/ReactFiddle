@@ -43,6 +43,9 @@
     ],
     "moduleDirectories": [
       "node_modules"
-    ]
+    ],
+    "setupFiles" : [
+      "./tst/setupTest.js"
+    ]   
   }
 }
